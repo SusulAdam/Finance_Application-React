@@ -1,5 +1,5 @@
 ## Available Scripts
 
-roject in process building
+project in process building
 
 
