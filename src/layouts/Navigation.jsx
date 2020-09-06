@@ -4,11 +4,12 @@ import links from 'constans/links';
 
 
 
+
 const Navigation = () => {
 
     const menu = links.map(link => (
         <li key={link.id}>
-            <NavLink to={link.name} excact={link.exact ? link.exact : false}></NavLink>
+            <NavLink to={link.path} exact={link.exact ? link.exact : false}>{link.name}</NavLink>
         </li>
     ))
 
