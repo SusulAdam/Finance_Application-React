@@ -8,27 +8,11 @@ import ShowAddTransaction from 'layouts/Pages/ManageFinances-Components/ShowAddT
 
 class ManageFinances extends React.Component {
 
+
     state = {
-        transactions: [{
-            id: 0,
-            text: 'salary from work',
-            amount: 2500,
-        },
-        {
-            id: 1,
-            text: 'savings',
-            amount: 500,
-        }, {
-            id: 2,
-            text: 'purchase of a computer',
-            amount: -500,
-        },
-        {
-            id: 3,
-            text: 'purchase of shops',
-            amount: -500,
-        }]
+        transactions: []
     }
+    counter = 0
 
     deleteTransation = (idOfDeleteTransition) => {
 
@@ -37,6 +21,22 @@ class ManageFinances extends React.Component {
         this.setState({
             transactions
         });
+
+    }
+
+    addTransaction = (text, amount) => {
+
+        const transaction = {
+            id: this.counter,
+            amount,
+            text,
+        }
+        this.setState(prevState => ({
+            transactions: [...prevState.transactions, transaction]
+        }))
+
+        this.counter++
+
 
     }
 
@@ -51,7 +51,7 @@ class ManageFinances extends React.Component {
                         <ShowAddTransaction />
                         <button className="controlsTransaction__deleteAllFinances">Delete All Finances</button>
                     </div>
-                    <AddTransaction />
+                    <AddTransaction addTransaction={this.addTransaction} />
                 </div>
             </>
         );

@@ -9,7 +9,6 @@ const TransactionsList = (props) => {
     const expenses = negativeAmounts.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransation={props.deleteTransation} />)
 
 
-
     return (
         <>
             <div className="manageFinances__allFinances">All Finacnes</div>
