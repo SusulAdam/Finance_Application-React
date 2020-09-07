@@ -3,19 +3,13 @@ import AddTransaction from 'layouts/Pages/ManageFinances-Components/AddTransacti
 import TransactionsList from 'layouts/Pages/ManageFinances-Components/TransactionsList';
 import ShowAddTransaction from 'layouts/Pages/ManageFinances-Components/ShowAddTransaction';
 
-
-
-
 class ManageFinances extends React.Component {
-
-
     state = {
         transactions: []
     }
     counter = 0
 
     deleteTransation = (idOfDeleteTransition) => {
-
         let transactions = [...this.state.transactions];
         transactions = transactions.filter(transaction => transaction.id !== idOfDeleteTransition)
         this.setState({
@@ -25,7 +19,6 @@ class ManageFinances extends React.Component {
     }
 
     addTransaction = (text, amount) => {
-
         const transaction = {
             id: this.counter,
             amount,
@@ -37,12 +30,9 @@ class ManageFinances extends React.Component {
 
         this.counter++
 
-
     }
 
     render() {
-
-
         return (
             <>
                 <div className="manageFinances">
