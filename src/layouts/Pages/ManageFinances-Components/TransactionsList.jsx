@@ -3,9 +3,10 @@ import Transaction from 'layouts/Pages/ManageFinances-Components/Transaction'
 
 const TransactionsList = (props) => {
 
-
-    const income = props.transactions.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransation={props.deleteTransation} />
-    )
+    const positiveAmounts = props.transactions.filter(positiveAmount => positiveAmount.amount >= 0)
+    const negativeAmounts = props.transactions.filter(negativeAmount => negativeAmount.amount < 0)
+    const income = positiveAmounts.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransation={props.deleteTransation} />)
+    const expenses = negativeAmounts.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransation={props.deleteTransation} />)
 
 
 
@@ -21,6 +22,7 @@ const TransactionsList = (props) => {
                 </div>
                 <div className="transaction-list__expenses">
                     <h3>Expenses</h3>
+                    {expenses}
 
                 </div>
 
