@@ -7,30 +7,25 @@ class ManageFinances extends React.Component {
     state = {
         transactions: [],
         activeAddTransaction: true,
-        allFinances: [0]
+        allFinances: [0],
+        // slicedArray: []
     }
     counter = 0
 
 
 
-    deleteTransation = (idOfDeleteTransition) => {
+    deleteTransaction = (idOfDeleteTranscition) => {
+
         let transactions = [...this.state.transactions];
-        transactions = transactions.filter(transaction => transaction.id !== idOfDeleteTransition)
-        const index = transactions.indexOf(idOfDeleteTransition) + 2;
-        console.log(index);
+        transactions = transactions.filter(transaction => transaction.id !== idOfDeleteTranscition)
 
         let allFinances = [...this.state.allFinances]
-        const z = allFinances.splice(index, 1)
-        console.log(z);
-
-        // allFinances = transactions.reduce((a, b) => a.amount + b.amount)
-
+        allFinances = transactions.map(newValue => newValue.amount)
 
 
         this.setState({
             transactions,
-            allFinances
-
+            allFinances: [0, ...allFinances]
         });
 
     }
@@ -71,7 +66,7 @@ class ManageFinances extends React.Component {
         return (
             <>
                 <div className="manageFinances">
-                    <TransactionsList transactions={this.state.transactions} allFinances={this.state.allFinances} deleteTransation={this.deleteTransation} />
+                    <TransactionsList transactions={this.state.transactions} allFinances={this.state.allFinances} deleteTransaction={this.deleteTransaction} />
                     <div className="controlsTransaction">
                         <ShowAddTransaction handleShowAddTransaction={this.handleShowAddTransaction} />
                         <button className="controlsTransaction__deleteAllFinances">Delete All Finances</button>

@@ -8,7 +8,7 @@ const Transaction = (props) => {
     return (
         <>
             <div>{text}: {amount}</div>
-            <button onClick={() => props.deleteTransation(id)}>X</button>
+            <button onClick={() => props.deleteTransaction(id)}>X</button>
         </>
     );
 }

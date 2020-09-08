@@ -5,8 +5,8 @@ const TransactionsList = (props) => {
 
     const positiveAmounts = props.transactions.filter(positiveAmount => positiveAmount.amount >= 0)
     const negativeAmounts = props.transactions.filter(negativeAmount => negativeAmount.amount < 0)
-    const income = positiveAmounts.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransation={props.deleteTransation} />)
-    const expenses = negativeAmounts.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransation={props.deleteTransation} />)
+    const income = positiveAmounts.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransaction={props.deleteTransaction} />)
+    const expenses = negativeAmounts.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransaction={props.deleteTransaction} />)
 
 
     let sumOfAllFinances = props.allFinances.reduce((a, b) => a + b)
