@@ -5,18 +5,36 @@ import ShowAddTransaction from 'layouts/Pages/ManageFinances-Components/ShowAddT
 
 class ManageFinances extends React.Component {
     state = {
-        transactions: []
+        transactions: [],
+        activeAddTransaction: true,
+        allFinances: [0]
     }
     counter = 0
+
+
 
     deleteTransation = (idOfDeleteTransition) => {
         let transactions = [...this.state.transactions];
         transactions = transactions.filter(transaction => transaction.id !== idOfDeleteTransition)
+        const index = transactions.indexOf(idOfDeleteTransition) + 2;
+        console.log(index);
+
+        let allFinances = [...this.state.allFinances]
+        const z = allFinances.splice(index, 1)
+        console.log(z);
+
+        // allFinances = transactions.reduce((a, b) => a.amount + b.amount)
+
+
+
         this.setState({
-            transactions
+            transactions,
+            allFinances
+
         });
 
     }
+
 
     addTransaction = (text, amount) => {
         const transaction = {
@@ -25,23 +43,40 @@ class ManageFinances extends React.Component {
             text,
         }
         this.setState(prevState => ({
-            transactions: [...prevState.transactions, transaction]
+            transactions: [...prevState.transactions, transaction],
+            activeAddTransaction: false,
+            allFinances: [...prevState.allFinances, amount],
         }))
 
         this.counter++
 
+
     }
 
+
+
+
+    handleShowAddTransaction = () => {
+        this.setState({
+            activeAddTransaction: !this.state.activeAddTransaction
+        })
+    }
+
+
+
+
+
     render() {
+
         return (
             <>
                 <div className="manageFinances">
-                    <TransactionsList transactions={this.state.transactions} deleteTransation={this.deleteTransation} />
+                    <TransactionsList transactions={this.state.transactions} allFinances={this.state.allFinances} deleteTransation={this.deleteTransation} />
                     <div className="controlsTransaction">
-                        <ShowAddTransaction />
+                        <ShowAddTransaction handleShowAddTransaction={this.handleShowAddTransaction} />
                         <button className="controlsTransaction__deleteAllFinances">Delete All Finances</button>
                     </div>
-                    <AddTransaction addTransaction={this.addTransaction} />
+                    {this.state.activeAddTransaction && <AddTransaction addTransaction={this.addTransaction} />}
                 </div>
             </>
         );

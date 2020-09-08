@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import messages from 'constans/errorMessages';
 
-
 class AddTransaction extends Component {
     state = {
         text: '',
@@ -10,13 +9,7 @@ class AddTransaction extends Component {
             text: false,
             amount: false
         },
-
-
     }
-
-
-
-
 
     handleNameOfTransaction = (e) => {
         this.setState({
@@ -70,7 +63,6 @@ class AddTransaction extends Component {
         if (text && amount) {
             correct = true
         }
-
         return ({
             text,
             amount,
