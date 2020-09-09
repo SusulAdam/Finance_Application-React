@@ -42,7 +42,7 @@ class ManageFinances extends React.Component {
         this.counter++
     }
 
-    handleShowAddTransaction = () => {
+    handleShowHideAddTransaction = () => {
         this.setState({
             activeAddTransaction: !this.state.activeAddTransaction
         })
@@ -61,9 +61,9 @@ class ManageFinances extends React.Component {
                 <div className="manageFinances">
                     <TransactionsList transactions={this.state.transactions} allFinances={this.state.allFinances} deleteTransaction={this.deleteTransaction} />
                     <div className="controlsTransaction">
-                        <MainManageFinancesControls deleteAllTransaction={this.deleteAllTransaction} handleShowAddTransaction={this.handleShowAddTransaction} />
+                        <MainManageFinancesControls deleteAllTransaction={this.deleteAllTransaction} handleShowHideAddTransaction={this.handleShowHideAddTransaction} />
                     </div>
-                    {this.state.activeAddTransaction && <AddTransaction addTransaction={this.addTransaction} />}
+                    {this.state.activeAddTransaction && <AddTransaction handleShowHideAddTransaction={this.handleShowHideAddTransaction} addTransaction={this.addTransaction} />}
                 </div>
             </>
         );

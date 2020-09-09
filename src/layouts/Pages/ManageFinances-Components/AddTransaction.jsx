@@ -77,17 +77,20 @@ class AddTransaction extends Component {
             <div className="AddTransactionPanel">
                 <form >
                     <h2>Add new transaction</h2>
+
                     <label htmlFor="nameOfTransaction">Name:</label>
-                    {/* <small>(please enter the name of transaction)</small> */}
+                    <small>(please enter the name of transaction)</small>
                     <input onChange={this.handleNameOfTransaction} id="nameOfTransaction" type="text" value={this.state.text} name="text" />
                     {this.state.errors.text && <span>{messages.text_incorect}</span>}
-                    {/* <small>enter the transaction amount, if you add an expense put a minus sign at the beginning of the amount</small> */}
+
                     <label htmlFor="amount">amount</label>
+                    <small>(enter the transaction amount, if you add an expense put a minus sign at the beginning of the amount)</small>
                     <input onChange={this.handleAmountOfTransaction} type="number" id="amount" name="amount" value={this.state.amount} />
                     {this.state.errors.amount && <span>{messages.amount_incorect}</span>}
+
                     <div className="AddTransactionPanel__controls">
                         <button onClick={this.handleAddTransaction}>Save</button>
-                        <button>Cancel</button>
+                        <button onClick={this.props.handleShowHideAddTransaction}>Cancel</button>
                     </div>
                 </form>
 

@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 
 
 const MainManageFinancesControls = (props) => {
-    const { handleShowAddTransaction, deleteAllTransaction } = props;
+    const { handleShowHideAddTransaction, deleteAllTransaction } = props;
     return (
-
-
         <>
-            <button onClick={handleShowAddTransaction} className="controlsTransaction__addTransaction">Add Transaction</button>
+            <button onClick={handleShowHideAddTransaction} className="controlsTransaction__addTransaction">Add Transaction</button>
             <button onClick={deleteAllTransaction} className="controlsTransaction__deleteAllFinances">Delete All Finances</button>
         </>
     );
