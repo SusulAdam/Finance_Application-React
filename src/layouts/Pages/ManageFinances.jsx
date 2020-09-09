@@ -55,14 +55,21 @@ class ManageFinances extends React.Component {
         })
     }
 
+
+
     render() {
+        let sumOfAllFinances = this.state.allFinances.reduce((a, b) => a + b)
         return (
             <>
                 <div className="manageFinances">
+                    <div className="manageFinances__allFinances">All Finacnes</div>
+
+                    {sumOfAllFinances}
+                    <MainManageFinancesControls deleteAllTransaction={this.deleteAllTransaction} handleShowHideAddTransaction={this.handleShowHideAddTransaction} />
                     <TransactionsList transactions={this.state.transactions} allFinances={this.state.allFinances} deleteTransaction={this.deleteTransaction} />
-                    <div className="controlsTransaction">
-                        <MainManageFinancesControls deleteAllTransaction={this.deleteAllTransaction} handleShowHideAddTransaction={this.handleShowHideAddTransaction} />
-                    </div>
+
+
+
                     {this.state.activeAddTransaction && <AddTransaction handleShowHideAddTransaction={this.handleShowHideAddTransaction} addTransaction={this.addTransaction} />}
                 </div>
             </>

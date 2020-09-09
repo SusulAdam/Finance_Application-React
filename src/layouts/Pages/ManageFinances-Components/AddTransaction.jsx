@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import messages from 'constans/errorMessages';
+import AddTransactionPanelControls from 'layouts/Pages/ManageFinances-Components/AddTransactionPanelControls';
 
 class AddTransaction extends Component {
     state = {
@@ -80,18 +81,28 @@ class AddTransaction extends Component {
 
                     <label htmlFor="nameOfTransaction">Name:</label>
                     <small>(please enter the name of transaction)</small>
-                    <input onChange={this.handleNameOfTransaction} id="nameOfTransaction" type="text" value={this.state.text} name="text" />
+                    <input
+                        onChange={this.handleNameOfTransaction}
+                        id="nameOfTransaction"
+                        type="text"
+                        value={this.state.text}
+                        name="text" />
+
                     {this.state.errors.text && <span>{messages.text_incorect}</span>}
 
                     <label htmlFor="amount">amount</label>
                     <small>(enter the transaction amount, if you add an expense put a minus sign at the beginning of the amount)</small>
-                    <input onChange={this.handleAmountOfTransaction} type="number" id="amount" name="amount" value={this.state.amount} />
+                    <input
+                        onChange={this.handleAmountOfTransaction}
+                        type="number"
+                        id="amount"
+                        name="amount"
+                        value={this.state.amount} />
                     {this.state.errors.amount && <span>{messages.amount_incorect}</span>}
 
-                    <div className="AddTransactionPanel__controls">
-                        <button onClick={this.handleAddTransaction}>Save</button>
-                        <button onClick={this.props.handleShowHideAddTransaction}>Cancel</button>
-                    </div>
+
+                    <AddTransactionPanelControls handleAddTransaction={this.handleAddTransaction} handleShowHideAddTransaction={this.props.handleShowHideAddTransaction} />
+
                 </form>
 
             </div>

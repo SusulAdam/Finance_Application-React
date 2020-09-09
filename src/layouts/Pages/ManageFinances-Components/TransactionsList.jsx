@@ -1,5 +1,6 @@
 import React from 'react';
-import Transaction from 'layouts/Pages/ManageFinances-Components/Transaction'
+import Transaction from 'layouts/Pages/ManageFinances-Components/Transaction';
+
 
 const TransactionsList = (props) => {
 
@@ -9,13 +10,11 @@ const TransactionsList = (props) => {
     const expenses = negativeAmounts.map(transaction => <Transaction key={transaction.id} transaction={transaction} deleteTransaction={props.deleteTransaction} />)
 
 
-    let sumOfAllFinances = props.allFinances.reduce((a, b) => a + b)
+
 
     return (
         <>
-            <div className="manageFinances__allFinances">All Finacnes</div>
-            {sumOfAllFinances}
-            <h2 className="manageFinances__h2">List of transactions</h2>
+
             <div className="transaction-list">
                 <div className="transaction-list__income">
                     <h3>Income</h3>
