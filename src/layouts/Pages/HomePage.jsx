@@ -8,7 +8,8 @@ const HomePage = () => {
                 <div className="homePage__container">
                     <div className="homePage__informations">
                         <p className="homePage__heading">Plan your savings!</p>
-                        <p className="homePage__information"> Calculate how much money you have and what you can invest in. </p>
+                        <p className="homePage__information"> Calculate how much money you have and what you can invest in
+or just plan your vacation investments </p>
                     </div>
                 </div>
             </section>
