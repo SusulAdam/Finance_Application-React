@@ -5,7 +5,8 @@ import MainManageFinancesControls from 'layouts/Pages/ManageFinances-Components/
 
 class ManageFinances extends React.Component {
     state = {
-        transactions: [],
+        transactions: [
+        ],
         activeAddTransaction: false,
         allFinances: [0],
     }
@@ -62,10 +63,14 @@ class ManageFinances extends React.Component {
         return (
             <>
                 <div className="manageFinances">
-                    <div className="manageFinances__allFinances">All Finacnes</div>
+                    <div className="managefinances__topContainer">
+                        <h2 className="manageFinances__allFinances">All Finacnes</h2>
 
-                    {sumOfAllFinances}
-                    <MainManageFinancesControls deleteAllTransaction={this.deleteAllTransaction} handleShowHideAddTransaction={this.handleShowHideAddTransaction} />
+                        <span className="manageFinances__sumOfAllFinances">{sumOfAllFinances}</span>
+                        <MainManageFinancesControls deleteAllTransaction={this.deleteAllTransaction} handleShowHideAddTransaction={this.handleShowHideAddTransaction} />
+
+                    </div>
+
                     <TransactionsList transactions={this.state.transactions} allFinances={this.state.allFinances} deleteTransaction={this.deleteTransaction} />
 
 

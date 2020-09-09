@@ -1,5 +1,130 @@
-.AddTransactionPanel {
-    width: 20%;
-    display: block;
-    background-color: rgba(255, 255, 255, 0.6);
+.manageFinances {
+    height: 100vh;
+    margin: 0 5px 55px 5px;
+
+
+    .managefinances__topContainer {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 100%;
+
+
+        .manageFinances__allFinances {
+            @include fluid-type(30px, 45px);
+            padding: 15px 0px 15px 5px;
+        }
+
+        .manageFinances__sumOfAllFinances {
+            @include fluid-type(30px, 45px);
+            padding: 5px;
+            background-color: rgb(101, 171, 199);
+            margin: 5px;
+        }
+
+        .controlsTransaction {
+            margin: 10px 0 0 0;
+        }
+    }
+
+    .transaction-list {
+        margin: 20px 0 0 0;
+        padding: 5px 0 15px 0;
+        background-color: rgba(255, 255, 255, 0.45);
+
+        .transaction-list__h3 {
+            @include fluid-type(25px, 40px);
+        }
+
+        .transaction-list__container {
+
+
+
+            .transaction-list__item {
+                display: flex;
+
+
+
+
+                .transaction-list__textAndAmount {
+                    @include fluid-type(15px, 23px);
+                    padding: 5px 0 5px 0;
+                }
+
+                .transaction-list__control {
+                    margin-left: 8px;
+                    padding: 0 5px 0 5px;
+
+
+                    &:hover {
+                        background: rgba(101, 171, 199, 0.8);
+                        transition: 0.3s;
+
+                    }
+                }
+            }
+        }
+
+        .income {
+            margin-bottom: 20px;
+            max-height: 300px;
+            overflow-y: scroll;
+            background-color: rgba(255, 255, 255, 0.55);
+        }
+
+        .expenses {
+            max-height: 300px;
+            overflow-y: scroll;
+            background-color: rgba(255, 255, 255, 0.55);
+        }
+
+    }
+
+    .AddTransactionPanel {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+        display: flex;
+        padding: 0 15px 15px 15px;
+
+        .AddTransactionPanel__h3 {
+            text-align: center;
+            @include fluid-type(23px, 43px);
+            margin: 17px
+        }
+
+        .AddTransactionPanel__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            .AddTransactionPanel__label {
+                @include fluid-type(20px, 33px);
+                padding-bottom: 5px;
+            }
+
+            small {
+                @include fluid-type(10px, 17px);
+                max-width: 600px;
+                padding-bottom: 3px;
+            }
+
+            .AddTransactionPanel__input {
+                padding: 5px;
+                width: 400px;
+                margin-bottom: 5px;
+            }
+
+            .amount {
+                margin-top: 25px;
+            }
+        }
+    }
 }

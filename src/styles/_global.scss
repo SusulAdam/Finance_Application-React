@@ -1,0 +1,22 @@
+.buttonStyles {
+    border: none;
+    outline: none;
+}
+
+.manageFinancesControl {
+    padding: 5px 15px 5px 15px;
+    margin: 15px 0 15px 5px;
+    @include fluid-type(15px, 25px);
+    transition: 0.3s;
+
+    &:hover {
+        background: rgba(101, 171, 199, 0.8);
+        transition: 0.3s;
+
+    }
+}
+
+.error {
+    color: red;
+    padding: 3px;
+}

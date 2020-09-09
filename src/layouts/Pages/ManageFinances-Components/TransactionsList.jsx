@@ -16,13 +16,15 @@ const TransactionsList = (props) => {
         <>
 
             <div className="transaction-list">
-                <div className="transaction-list__income">
-                    <h3>Income</h3>
+                <h3 className="transaction-list__h3">Income</h3>
+                <div className="transaction-list__container income">
+
                     {income}
 
                 </div>
-                <div className="transaction-list__expenses">
-                    <h3>Expenses</h3>
+                <h3 className="transaction-list__h3">Expenses</h3>
+                <div className="transaction-list__container expenses">
+
                     {expenses}
 
                 </div>
