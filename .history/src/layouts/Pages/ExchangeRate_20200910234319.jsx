@@ -28,9 +28,9 @@ class ExchangeRate extends Component {
                 const rates = Object.values(res.rates)[0];
                 console.log(rates);
                 let exchangeRateScore = [this.state.exchangeRateScore]
-                exchangeRateScore = (this.state.enterValue * rates).toFixed(4);
+                exchangeRateScore = this.state.enterValue * rates;
                 this.setState({
-                    exchangeRateScore,
+                    exchangeRateScore
                 })
 
             })

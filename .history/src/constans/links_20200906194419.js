@@ -11,5 +11,4 @@ const links = [
 
 
 
-
-export { links };
+export default links

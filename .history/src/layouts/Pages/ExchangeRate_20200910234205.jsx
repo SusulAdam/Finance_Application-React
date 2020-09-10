@@ -28,9 +28,9 @@ class ExchangeRate extends Component {
                 const rates = Object.values(res.rates)[0];
                 console.log(rates);
                 let exchangeRateScore = [this.state.exchangeRateScore]
-                exchangeRateScore = (this.state.enterValue * rates).toFixed(4);
+                exchangeRateScore = this.state.enterValue * rates;
                 this.setState({
-                    exchangeRateScore,
+                    exchangeRateScore
                 })
 
             })
@@ -67,7 +67,7 @@ class ExchangeRate extends Component {
                                 <option value="EUR">EUR</option>
                                 <option value="CHF">CHF</option>
                             </select>
-                            <button >Swaper</button>
+                            <button onClick={this.handleDataExchangeRate}>Click</button>
                             <select
                                 value={this.state.rightCurrency}
                                 id="exchangeRate-body__right-currency">
@@ -77,7 +77,6 @@ class ExchangeRate extends Component {
                                 <option value="EUR">EUR</option>
                                 <option value="CHF">CHF</option>
                             </select>
-                            <button onClick={this.handleDataExchangeRate}>Click</button>
                         </div>
                         <p className="exchangeRate-body__rate-info">{this.state.enterValue && <span>{this.state.exchangeRateScore}</span>}</p>
 

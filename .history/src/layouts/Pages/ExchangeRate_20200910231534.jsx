@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
+const url = `https://api.ratesapi.io/api/latest?base=PLN&symbols=USD`
 
 
 
 class ExchangeRate extends Component {
 
     state = {
-        enterValue: '',
-        leftCurrency: "PLN",
-        rightCurrency: "USD",
-        exchangeRateScore: ""
+        enterValue: ''
 
     }
 
@@ -20,19 +18,10 @@ class ExchangeRate extends Component {
 
 
     handleDataExchangeRate = () => {
-        const urlAPI = `https://api.ratesapi.io/api/latest?base=${this.state.leftCurrency}&symbols=${this.state.rightCurrency}`
-        fetch(urlAPI)
+        fetch(url)
             .then(response => response.json())
             .then(res => {
                 console.log(res);
-                const rates = Object.values(res.rates)[0];
-                console.log(rates);
-                let exchangeRateScore = [this.state.exchangeRateScore]
-                exchangeRateScore = (this.state.enterValue * rates).toFixed(4);
-                this.setState({
-                    exchangeRateScore,
-                })
-
             })
 
     }
@@ -40,9 +29,7 @@ class ExchangeRate extends Component {
 
     render() {
 
-
         return (
-
             <>
                 <div className="exchangeRate" >
                     <h2 className="exchangeRate__header"></h2>
@@ -61,25 +48,24 @@ class ExchangeRate extends Component {
                                 value={this.state.leftCurrency}
                                 id="exchangeRate-body__left-currency">
 
-                                <option value="PLN" >PLN</option>
+                                <option value="PLN" selected>PLN</option>
                                 <option value="USD">USD</option>
                                 <option value="GBP">GBP</option>
                                 <option value="EUR">EUR</option>
                                 <option value="CHF">CHF</option>
                             </select>
-                            <button >Swaper</button>
+                            <button onClick={this.handleDataExchangeRate}>Click</button>
                             <select
                                 value={this.state.rightCurrency}
                                 id="exchangeRate-body__right-currency">
                                 <option value="PLN">PLN</option>
-                                <option value="USD" >USD</option>
+                                <option value="USD" selected>USD</option>
                                 <option value="GBP">GBP</option>
                                 <option value="EUR">EUR</option>
                                 <option value="CHF">CHF</option>
                             </select>
-                            <button onClick={this.handleDataExchangeRate}>Click</button>
                         </div>
-                        <p className="exchangeRate-body__rate-info">{this.state.enterValue && <span>{this.state.exchangeRateScore}</span>}</p>
+                        <p className="exchangeRate-body__rate-info"></p>
 
                     </div>
                 </div>

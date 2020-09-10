@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { urlAPI } from 'constans/links';
 
 
 
@@ -7,8 +8,7 @@ class ExchangeRate extends Component {
     state = {
         enterValue: '',
         leftCurrency: "PLN",
-        rightCurrency: "USD",
-        exchangeRateScore: ""
+        rightCurrency: "USD"
 
     }
 
@@ -20,19 +20,10 @@ class ExchangeRate extends Component {
 
 
     handleDataExchangeRate = () => {
-        const urlAPI = `https://api.ratesapi.io/api/latest?base=${this.state.leftCurrency}&symbols=${this.state.rightCurrency}`
-        fetch(urlAPI)
+        fetch(url)
             .then(response => response.json())
             .then(res => {
                 console.log(res);
-                const rates = Object.values(res.rates)[0];
-                console.log(rates);
-                let exchangeRateScore = [this.state.exchangeRateScore]
-                exchangeRateScore = (this.state.enterValue * rates).toFixed(4);
-                this.setState({
-                    exchangeRateScore,
-                })
-
             })
 
     }
@@ -42,7 +33,6 @@ class ExchangeRate extends Component {
 
 
         return (
-
             <>
                 <div className="exchangeRate" >
                     <h2 className="exchangeRate__header"></h2>
@@ -67,7 +57,7 @@ class ExchangeRate extends Component {
                                 <option value="EUR">EUR</option>
                                 <option value="CHF">CHF</option>
                             </select>
-                            <button >Swaper</button>
+                            <button onClick={this.handleDataExchangeRate}>Click</button>
                             <select
                                 value={this.state.rightCurrency}
                                 id="exchangeRate-body__right-currency">
@@ -77,9 +67,8 @@ class ExchangeRate extends Component {
                                 <option value="EUR">EUR</option>
                                 <option value="CHF">CHF</option>
                             </select>
-                            <button onClick={this.handleDataExchangeRate}>Click</button>
                         </div>
-                        <p className="exchangeRate-body__rate-info">{this.state.enterValue && <span>{this.state.exchangeRateScore}</span>}</p>
+                        <p className="exchangeRate-body__rate-info"></p>
 
                     </div>
                 </div>

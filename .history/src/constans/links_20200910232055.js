@@ -9,7 +9,10 @@ const links = [
     { id: 3, name: "exchange-rate", path: "/exchange-rate", component: ExchangeRate }
 ]
 
+urlAPI = `https://api.ratesapi.io/api/latest?base=${this.state.leftCurrenct}&symbols=${this.state.rightCurrency}`
 
 
-
-export { links };
+export {
+    links,
+    urlAPI
+}
