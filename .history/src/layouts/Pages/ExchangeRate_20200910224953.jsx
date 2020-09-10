@@ -16,7 +16,7 @@ class ExchangeRate extends Component {
                         />
 
                         <div className="exchangeRate-body__currency-container">
-                            <select id="exchangeRate-body__left-currency">
+                            <select id="currency-one">
                                 <option value="PLN" selected>PLN</option>
                                 <option value="USD">USD</option>
                                 <option value="GBP">GBP</option>
@@ -24,7 +24,7 @@ class ExchangeRate extends Component {
                                 <option value="CHF">CHF</option>
                             </select>
                             <button>Click</button>
-                            <select id="exchangeRate-body__right-currency">
+                            <select id="currency-two">
                                 <option value="PLN">PLN</option>
                                 <option value="USD" selected>USD</option>
                                 <option value="GBP">GBP</option>
@@ -32,7 +32,6 @@ class ExchangeRate extends Component {
                                 <option value="CHF">CHF</option>
                             </select>
                         </div>
-                        <p className="exchangeRate-body__rate-info"></p>
 
                     </div>
                 </div>
