@@ -12,15 +12,16 @@ class ExchangeRate extends Component {
 
     }
 
-    handleEnterValue = (e) => {
+    handleValuesOfExchange = (e) => {
+        const name = e.target.name
         this.setState({
-            enterValue: e.target.value
+            [name]: e.target.value
         })
     }
 
 
-    handleDataExchangeRate = () => {
-        const urlAPI = `https://api.ratesapi.io/api/latest?base=${this.state.leftCurrency}&symbols=${this.state.rightCurrency}`
+    handleDataExchangeRate = (firstCurrency, secondCurrency) => {
+        const urlAPI = `https://api.ratesapi.io/api/latest?base=${firstCurrency}&symbols=${secondCurrency}`
         fetch(urlAPI)
             .then(response => response.json())
             .then(res => {
@@ -35,6 +36,16 @@ class ExchangeRate extends Component {
 
             })
 
+    }
+
+    swaperOfValues = () => {
+
+        this.setState({
+            leftCurrency: this.state.rightCurrency,
+            rightCurrency: this.state.leftCurrency,
+        })
+
+        this.handleDataExchangeRate(this.state.rightCurrency, this.state.leftCurrency)
     }
 
 
@@ -53,13 +64,18 @@ class ExchangeRate extends Component {
                         <input
                             type="number" className="exchangeRate-body__enter-value"
                             value={this.state.enterValue}
-                            onChange={this.handleEnterValue}
+                            onChange={this.handleValuesOfExchange}
+                            name="enterValue"
                         />
+                        <span>{this.state.leftCurrency}</span>
 
                         <div className="exchangeRate-body__currency-container">
                             <select
                                 value={this.state.leftCurrency}
-                                id="exchangeRate-body__left-currency">
+                                id="exchangeRate-body__left-currency"
+                                onChange={this.handleValuesOfExchange}
+                                name="leftCurrency">
+
 
                                 <option value="PLN" >PLN</option>
                                 <option value="USD">USD</option>
@@ -67,19 +83,29 @@ class ExchangeRate extends Component {
                                 <option value="EUR">EUR</option>
                                 <option value="CHF">CHF</option>
                             </select>
-                            <button >Swaper</button>
+                            <button onClick={this.swaperOfValues}>Swaper</button>
                             <select
                                 value={this.state.rightCurrency}
-                                id="exchangeRate-body__right-currency">
+                                id="exchangeRate-body__right-currency"
+                                onChange={this.handleValuesOfExchange}
+                                name="rightCurrency">
+
+
+
+
                                 <option value="PLN">PLN</option>
                                 <option value="USD" >USD</option>
                                 <option value="GBP">GBP</option>
                                 <option value="EUR">EUR</option>
                                 <option value="CHF">CHF</option>
+
                             </select>
-                            <button onClick={this.handleDataExchangeRate}>Click</button>
+                            <button onClick={() => this.handleDataExchangeRate(this.state.leftCurrency, this.state.rightCurrency)}>Click</button>
                         </div>
-                        <p className="exchangeRate-body__rate-info">{this.state.enterValue && <span>{this.state.exchangeRateScore}</span>}</p>
+                        <p className="exchangeRate-body__rate-info">{this.state.exchangeRateScore && <span>{this.state.exchangeRateScore}  {this.state.rightCurrency}   </span>}</p>
+
+
+
 
                     </div>
                 </div>
