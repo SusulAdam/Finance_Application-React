@@ -60,17 +60,13 @@ class ExchangeRate extends Component {
 
 
                     <div className="exchangeRate-body">
-
                         <div className="exchangeRate-body__enterValue-items">
-
 
                             <ExchangeRateEnterValue
                                 value={this.state.enterValue}
                                 onChange={this.handleValuesOfExchange} />
                             <span className="exchangeRate-body__mainCurrency">{this.state.leftCurrency}</span>
                         </div>
-
-
 
                         <div className="exchangeRate-body__currency-container">
 
@@ -79,16 +75,14 @@ class ExchangeRate extends Component {
                                 onChange={this.handleValuesOfExchange}
                                 name="leftCurrency" />
 
-
                             <button onClick={this.swaperOfValues}>
                                 <MdSwapHoriz className="exchangeRate-body__swaper " />
                             </button>
-                            <SelectCurrency
 
+                            <SelectCurrency
                                 value={this.state.rightCurrency}
                                 onChange={this.handleValuesOfExchange}
                                 name="rightCurrency" />
-
 
                         </div>
 
