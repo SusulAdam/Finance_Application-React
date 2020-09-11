@@ -14,8 +14,10 @@ const SelectCurrency = (props) => {
     return (
         <select
             value={props.value}
-            onChange={props.onChange}>
+            onChange={props.onChange}
+            className="exchangeRate-body__selectCurrency ">
             {currency}
+
         </select>
     );
 }

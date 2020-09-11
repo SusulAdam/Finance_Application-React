@@ -55,37 +55,48 @@ class ExchangeRate extends Component {
 
             <>
                 <div className="exchangeRate" >
-                    <h2 className="exchangeRate__header"></h2>
-                    <p className="exchangeRate__information">Check current
-                exchange rates!</p>
+                    <h2 className="exchangeRate__header">Check current
+                exchange rates!</h2>
+
 
                     <div className="exchangeRate-body">
-                        <ExchangeRateEnterValue
-                            value={this.state.enterValue}
-                            onChange={this.handleValuesOfExchange} />
-                        <span>{this.state.leftCurrency}</span>
+
+                        <div className="exchangeRate-body__enterValue-items">
+
+
+                            <ExchangeRateEnterValue
+                                value={this.state.enterValue}
+                                onChange={this.handleValuesOfExchange} />
+                            <span className="exchangeRate-body__mainCurrency">{this.state.leftCurrency}</span>
+                        </div>
+
+
 
                         <div className="exchangeRate-body__currency-container">
 
                             <SelectCurrency
                                 value={this.state.leftCurrency}
-                                className={"exchangeRate-body__left-currency"}
                                 onChange={this.handleValuesOfExchange}
                                 name="leftCurrency" />
 
 
                             <button onClick={this.swaperOfValues}>
-                                <MdSwapHoriz />
+                                <MdSwapHoriz className="exchangeRate-body__swaper " />
                             </button>
                             <SelectCurrency
+
                                 value={this.state.rightCurrency}
-                                className={"exchangeRate-body__right-currency"}
                                 onChange={this.handleValuesOfExchange}
                                 name="rightCurrency" />
 
 
-                            <button onClick={() => this.handleDataExchangeRate(this.state.leftCurrency, this.state.rightCurrency)}>Click</button>
                         </div>
+
+                        <button
+                            className="exchangeRate-body__exchangeCurrency"
+                            onClick={() => this.handleDataExchangeRate(this.state.leftCurrency, this.state.rightCurrency)}>Click</button>
+
+
 
                         <p className="exchangeRate-body__rate-info">{this.state.exchangeRateScore && <span>{this.state.exchangeRateScore}  {this.state.rightCurrency}</span>}</p>
 

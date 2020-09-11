@@ -1,0 +1,79 @@
+.exchangeRate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    .exchangeRate__header {
+        @include fluid-type(23px, 40px);
+        color: #ffffff;
+        margin: 0 0 30px 0;
+
+    }
+
+
+
+
+
+
+    .exchangeRate-body {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .exchangeRate-body__enterValue-items {
+            .exchangeRate-body__enter-value {
+                padding: 5px;
+                width: 400px;
+                outline: none;
+                margin-bottom: 10px;
+            }
+
+            .exchangeRate-body__mainCurrency {
+                @include fluid-type(15px, 23px);
+                color: #fff;
+            }
+        }
+
+
+
+        .exchangeRate-body__currency-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .exchangeRate-body__selectCurrency {
+                @include fluid-type(15px, 28px);
+                font-size: 36px;
+                cursor: pointer;
+                margin: 0 10px 0 10px;
+            }
+
+
+
+            .exchangeRate-body__swaper {
+                @include fluid-type(15px, 28px);
+                font-size: 36px;
+                cursor: pointer;
+
+            }
+
+        }
+
+        .exchangeRate-body__rate-info {
+            color: #ffffff;
+            @include fluid-type(23px, 40px);
+        }
+
+
+
+    }
+
+
+
+
+}
