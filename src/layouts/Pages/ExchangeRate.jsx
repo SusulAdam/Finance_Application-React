@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ExchangeRateEnterValue from 'layouts/Pages/ExchangeRate-Components/ExchangeRateEnterValue';
 import SelectCurrency from 'layouts/Pages/ExchangeRate-Components/SelectCurrency';
+import { MdSwapHoriz } from 'react-icons/md';
+
 
 class ExchangeRate extends Component {
 
@@ -72,7 +74,9 @@ class ExchangeRate extends Component {
                                 name="leftCurrency" />
 
 
-                            <button onClick={this.swaperOfValues}>Swaper</button>
+                            <button onClick={this.swaperOfValues}>
+                                <MdSwapHoriz />
+                            </button>
                             <SelectCurrency
                                 value={this.state.rightCurrency}
                                 className={"exchangeRate-body__right-currency"}
