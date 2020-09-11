@@ -94,7 +94,7 @@ class ExchangeRate extends Component {
 
                         <button
                             className="exchangeRate-body__exchangeCurrency"
-                            onClick={() => this.handleDataExchangeRate(this.state.leftCurrency, this.state.rightCurrency)}>Click</button>
+                            onClick={() => this.handleDataExchangeRate(this.state.leftCurrency, this.state.rightCurrency)}>Exchange</button>
 
 
 

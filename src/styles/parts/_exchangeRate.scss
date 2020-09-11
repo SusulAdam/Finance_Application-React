@@ -69,6 +69,13 @@
             @include fluid-type(23px, 40px);
         }
 
+        .exchangeRate-body__exchangeCurrency {
+            margin: 10px 0 10px 0;
+            @include fluid-type(15px, 23px);
+            font-size: 36px;
+            cursor: pointer;
+        }
+
 
 
     }
