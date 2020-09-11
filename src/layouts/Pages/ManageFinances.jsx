@@ -73,8 +73,6 @@ class ManageFinances extends React.Component {
 
                     <TransactionsList transactions={this.state.transactions} allFinances={this.state.allFinances} deleteTransaction={this.deleteTransaction} />
 
-
-
                     {this.state.activeAddTransaction && <AddTransaction handleShowHideAddTransaction={this.handleShowHideAddTransaction} addTransaction={this.addTransaction} />}
                 </div>
             </>

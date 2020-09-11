@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
-
+import ExchangeRateEnterValue from 'layouts/Pages/ExchangeRate-Components/ExchangeRateEnterValue';
+import SelectCurrency from 'layouts/Pages/ExchangeRate-Components/SelectCurrency';
 
 class ExchangeRate extends Component {
 
@@ -9,7 +9,6 @@ class ExchangeRate extends Component {
         leftCurrency: "PLN",
         rightCurrency: "USD",
         exchangeRateScore: ""
-
     }
 
     handleValuesOfExchange = (e) => {
@@ -29,13 +28,11 @@ class ExchangeRate extends Component {
                 const rates = Object.values(res.rates)[0];
                 console.log(rates);
                 let exchangeRateScore = [this.state.exchangeRateScore]
-                exchangeRateScore = (this.state.enterValue * rates).toFixed(4);
+                exchangeRateScore = (this.state.enterValue * rates).toFixed(2);
                 this.setState({
                     exchangeRateScore,
                 })
-
             })
-
     }
 
     swaperOfValues = () => {
@@ -61,50 +58,32 @@ class ExchangeRate extends Component {
                 exchange rates!</p>
 
                     <div className="exchangeRate-body">
-                        <input
-                            type="number" className="exchangeRate-body__enter-value"
+                        <ExchangeRateEnterValue
                             value={this.state.enterValue}
-                            onChange={this.handleValuesOfExchange}
-                            name="enterValue"
-                        />
+                            onChange={this.handleValuesOfExchange} />
                         <span>{this.state.leftCurrency}</span>
 
                         <div className="exchangeRate-body__currency-container">
-                            <select
+
+                            <SelectCurrency
                                 value={this.state.leftCurrency}
-                                id="exchangeRate-body__left-currency"
+                                className={"exchangeRate-body__left-currency"}
                                 onChange={this.handleValuesOfExchange}
-                                name="leftCurrency">
+                                name="leftCurrency" />
 
 
-                                <option value="PLN" >PLN</option>
-                                <option value="USD">USD</option>
-                                <option value="GBP">GBP</option>
-                                <option value="EUR">EUR</option>
-                                <option value="CHF">CHF</option>
-                            </select>
                             <button onClick={this.swaperOfValues}>Swaper</button>
-                            <select
+                            <SelectCurrency
                                 value={this.state.rightCurrency}
-                                id="exchangeRate-body__right-currency"
+                                className={"exchangeRate-body__right-currency"}
                                 onChange={this.handleValuesOfExchange}
-                                name="rightCurrency">
+                                name="rightCurrency" />
 
 
-
-
-                                <option value="PLN">PLN</option>
-                                <option value="USD" >USD</option>
-                                <option value="GBP">GBP</option>
-                                <option value="EUR">EUR</option>
-                                <option value="CHF">CHF</option>
-
-                            </select>
                             <button onClick={() => this.handleDataExchangeRate(this.state.leftCurrency, this.state.rightCurrency)}>Click</button>
                         </div>
-                        <p className="exchangeRate-body__rate-info">{this.state.exchangeRateScore && <span>{this.state.exchangeRateScore}  {this.state.rightCurrency}   </span>}</p>
 
-
+                        <p className="exchangeRate-body__rate-info">{this.state.exchangeRateScore && <span>{this.state.exchangeRateScore}  {this.state.rightCurrency}</span>}</p>
 
 
                     </div>
