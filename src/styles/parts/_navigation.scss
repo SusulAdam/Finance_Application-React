@@ -4,22 +4,48 @@ nav {
     ul {
         display: flex;
 
+        .pigIcon{
+            font-size: 50px;
+            margin-left: 40px;
+        }
+
+        .pigBank-logo{
+            color: black;
+             @include fluid-type(25px, 32px);
+        }
+
 
         li {
             padding: 10px 20px 0 0;
             list-style-type: none;
-            border-bottom: 2px rgba(0, 0, 0, 0) solid;
+
 
             a {
                 font-weight: 500;
                 text-decoration: none;
                 color: #ffffff;
                 @include fluid-type(20px, 25px);
+                transition: .4s;
+
+                &:hover{
+                    color: $orangeMainColor;
+                    transition: .4s;
+
+                }
+
+
             }
 
             .active {
-                border-bottom: 3px #ffffff solid;
+               color: $orangeMainColor;
+                border-radius: 50px;
+                border: 1px solid $orangeMainColor;
+                padding: 5px 10px 5px 10px;
             }
+        }
+
+        .navigation__li{
+            margin: 7px 0 0 0;
         }
 
         li:first-child {
