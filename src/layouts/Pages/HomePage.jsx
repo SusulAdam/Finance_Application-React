@@ -11,7 +11,7 @@ const HomePage = () => {
                         <p className="homePage__information">
                             Managing your money has never been easier. Control your expenses, check your investments and plan your budget.  </p>
 
-                        <Link to="/manage-finances" ><button className="homePage__control weight">Plan now</button></Link>
+                        <Link to="/manage-finances" ><button className="homePage__control click-control weight">Plan now</button></Link>
 
 
                     </div>

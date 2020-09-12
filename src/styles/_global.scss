@@ -20,3 +20,61 @@
     color: red;
     padding: 3px;
 }
+
+
+.click-control{
+
+                  outline: none;
+                border: 2px solid currentColor;
+                border-radius: 3rem;
+                color: $orangeMainColor;
+                font-family: $header;
+                font-weight: 900;
+                font-size: 3rem;
+                font-weight: 100;
+                overflow: hidden;
+                padding: 1rem 2rem;
+                position: relative;
+                text-decoration: none;
+                transition: .2s transform ease-in-out;
+                will-change: transform;
+                z-index: 0;
+                background-color: #E3E3E3;
+                margin: 50px 0 0 40px;
+
+                 &::after{
+                    background-color: $orangeMainColor;
+                    border-radius: 3rem;
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    transform: translate(-100%, 0) rotate(10deg);
+                    transform-origin: top left;
+                    transition: .2s transform ease-out;
+                    will-change: transform;
+                    z-index: -1;
+                     font-weight: 900;
+                }
+
+
+                    &:hover::after{
+                    transform: translate(0, 0);
+                     font-weight: 900;
+                    }
+
+
+                &:hover{
+                    border: 2px solid transparent;
+                    color: $homePageControlFontColor;
+                    transform: scale(1.05);
+                    will-change: transform;
+                     font-weight: 600
+                }
+
+
+
+            }

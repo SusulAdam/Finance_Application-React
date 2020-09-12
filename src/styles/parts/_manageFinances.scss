@@ -1,63 +1,105 @@
 .manageFinances {
-    height: 100vh;
     margin: 0 5px 55px 5px;
+
+    border-radius: 50px;
+    margin: 0 0 0 20px;
+    padding: 0 20px 0 20px;
+    display: flex;
+
 
 
     .managefinances__topContainer {
-        position: relative;
+     border: 2px solid $orangeMainColor;
+        border-radius: 50px;
         background-color: rgba(255, 255, 255, 0.2);
-        width: 100%;
+        width: 430px;
+        height: 800px;
+        background-color: $orangeMainColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
 
         .manageFinances__allFinances {
-            @include fluid-type(30px, 45px);
+            @include fluid-type(30px, 42px);
             padding: 15px 0px 15px 5px;
+            text-align: center;
+            color: #ffffff;
+            margin: 20px 0 0 0;
+
         }
 
         .manageFinances__sumOfAllFinances {
-            @include fluid-type(30px, 45px);
+            @include fluid-type(35px, 110px);
             padding: 5px;
-            background-color: rgb(101, 171, 199);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            font-weight: 600;
             margin: 5px;
+            max-width: 400px;
+            overflow-x: scroll;
+
+
         }
 
         .controlsTransaction {
-            margin: 10px 0 0 0;
+            display: flex;
+            width: 250px;
+            flex-direction: column;
+            margin: 100px 0 0 0;
+            justify-content: center;
+            align-items: center;
+
+
+            .controlsTransaction__addDeleteTransaction{
+                @include fluid-type(20px, 25px);
+                 width: 333px;
+                 margin: 20px 0 10px 0 ;
+            }
+
+
         }
     }
 
     .transaction-list {
-        margin: 20px 0 0 0;
+
         padding: 5px 0 15px 0;
-        background-color: rgba(255, 255, 255, 0.45);
+        position: relative;
+        height: 800px;
+
 
         .transaction-list__h3 {
             @include fluid-type(25px, 40px);
+            text-align: center;
+            margin: 10px 0 0 0;
+
         }
 
         .transaction-list__container {
 
-
-
-            .transaction-list__item {
-                display: flex;
-
+            .transaction-list__container__items{
+                height: 300px;
+                overflow-y: scroll;
 
 
 
-                .transaction-list__textAndAmount {
-                    @include fluid-type(15px, 23px);
-                    padding: 5px 0 5px 0;
-                }
-
-                .transaction-list__control {
-                    margin-left: 8px;
-                    padding: 0 5px 0 5px;
+                .transaction-list__item {
+                    display: flex;
 
 
-                    &:hover {
-                        background: rgba(101, 171, 199, 0.8);
-                        transition: 0.3s;
+                    .transaction-list__textAndAmount {
+                        @include fluid-type(15px, 23px);
+                        padding: 5px 0 5px 0;
+                    }
+
+                    .transaction-list__control {
+                        margin-left: 8px;
+                        padding: 0 5px 0 5px;
+                        background: none;
+                        color: $orangeMainColor;
+                        font-weight: 800;
 
                     }
                 }
@@ -66,27 +108,41 @@
 
         .income {
             margin-bottom: 20px;
-            max-height: 300px;
-            overflow-y: scroll;
+
             background-color: rgba(255, 255, 255, 0.55);
+            border: 2px solid $orangeMainColor;
+            border-radius: 50px;
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 390px;
+            width: 430px;
+            padding: 0 20px 0 20px;
+
         }
 
         .expenses {
-            max-height: 300px;
-            overflow-y: scroll;
+
+
             background-color: rgba(255, 255, 255, 0.55);
+            border: 2px solid $orangeMainColor;
+            border-radius: 50px;
+            position: absolute;
+            top: 51.25%;
+            left: 20px;
+            height: 390px;
+            width: 430px;
+            padding: 0 20px 0 20px;
         }
 
     }
 
     .AddTransactionPanel {
         position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+
         display: flex;
         justify-content: center;
-        justify-content: center;
+        align-items: center;
         background-color: rgba(0, 0, 0, 0.8);
         color: #ffffff;
         display: flex;
@@ -128,3 +184,38 @@
         }
     }
 }
+
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 10px;
+    background-color: rgba(214, 103, 24, .8);
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-color: rgba(214, 103, 24, .8);
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: rgba(214, 103, 24, .8);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    height: 50px;
+    background-color: rgba(214, 103, 24, .8);
+    border-radius: 3px;
+}
+

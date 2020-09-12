@@ -12,6 +12,13 @@ nav {
         .pigBank-logo{
             color: black;
              @include fluid-type(25px, 32px);
+
+              &:hover{
+                    color: black;
+                    transition: .4s;
+
+                }
+
         }
 
 
