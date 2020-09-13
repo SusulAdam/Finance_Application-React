@@ -55,47 +55,53 @@ class ExchangeRate extends Component {
 
             <>
                 <div className="exchangeRate" >
-                    <h2 className="exchangeRate__header">Check current
-                exchange rates!</h2>
+                    <div className="exchangeRate__overlayer"></div>
+
+                    <div className="exchangeRate__container">
+
+                        <h2 className="exchangeRate__header">Check current
+                exchange rates</h2>
 
 
-                    <div className="exchangeRate-body">
-                        <div className="exchangeRate-body__enterValue-items">
+                        <div className="exchangeRate-body">
+                            <div className="exchangeRate-body__enterValue-items">
 
-                            <ExchangeRateEnterValue
-                                value={this.state.enterValue}
-                                onChange={this.handleValuesOfExchange} />
-                            <span className="exchangeRate-body__mainCurrency">{this.state.leftCurrency}</span>
+                                <ExchangeRateEnterValue
+                                    value={this.state.enterValue}
+                                    onChange={this.handleValuesOfExchange} />
+                                <span className="exchangeRate-body__mainCurrency">{this.state.leftCurrency}</span>
+                            </div>
+
+                            <div className="exchangeRate-body__currency-container">
+
+                                <SelectCurrency
+                                    value={this.state.leftCurrency}
+                                    onChange={this.handleValuesOfExchange}
+                                    name="leftCurrency" />
+
+                                <button onClick={this.swaperOfValues}>
+                                    <MdSwapHoriz className="exchangeRate-body__swaper  " />
+                                </button>
+
+                                <SelectCurrency
+                                    value={this.state.rightCurrency}
+                                    onChange={this.handleValuesOfExchange}
+                                    name="rightCurrency" />
+
+                            </div>
+
+                            <button
+                                className="exchangeRate-body__exchangeCurrency click-control"
+                                onClick={() => this.handleDataExchangeRate(this.state.leftCurrency, this.state.rightCurrency)}>Exchange</button>
+
+
+
+                            <p className="exchangeRate-body__rate-info">{this.state.exchangeRateScore && <span>{this.state.exchangeRateScore}  {this.state.rightCurrency}</span>}</p>
+
+
                         </div>
-
-                        <div className="exchangeRate-body__currency-container">
-
-                            <SelectCurrency
-                                value={this.state.leftCurrency}
-                                onChange={this.handleValuesOfExchange}
-                                name="leftCurrency" />
-
-                            <button onClick={this.swaperOfValues}>
-                                <MdSwapHoriz className="exchangeRate-body__swaper " />
-                            </button>
-
-                            <SelectCurrency
-                                value={this.state.rightCurrency}
-                                onChange={this.handleValuesOfExchange}
-                                name="rightCurrency" />
-
-                        </div>
-
-                        <button
-                            className="exchangeRate-body__exchangeCurrency"
-                            onClick={() => this.handleDataExchangeRate(this.state.leftCurrency, this.state.rightCurrency)}>Exchange</button>
-
-
-
-                        <p className="exchangeRate-body__rate-info">{this.state.exchangeRateScore && <span>{this.state.exchangeRateScore}  {this.state.rightCurrency}</span>}</p>
-
-
                     </div>
+
                 </div>
             </>
         );
