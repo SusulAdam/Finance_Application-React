@@ -8,7 +8,7 @@ class ManageFinances extends React.Component {
         transactions: [
 
         ],
-        activeAddTransaction: false,
+        activeAddTransaction: true,
         allFinances: [0],
     }
     counter = 0
@@ -63,11 +63,15 @@ class ManageFinances extends React.Component {
         let sumOfAllFinances = this.state.allFinances.reduce((a, b) => a + b)
         return (
             <>
+
                 <div className="manageFinances">
+                    <div className="manageFinances-overlayer">
+
+                    </div>
                     <div className="managefinances__topContainer">
                         <h2 className="manageFinances__allFinances">All finances</h2>
 
-                        <span className="manageFinances__sumOfAllFinances">{sumOfAllFinances}</span>
+                        <span className="manageFinances__sumOfAllFinances">${sumOfAllFinances}</span>
                         <MainManageFinancesControls deleteAllTransaction={this.deleteAllTransaction} handleShowHideAddTransaction={this.handleShowHideAddTransaction} />
 
                     </div>

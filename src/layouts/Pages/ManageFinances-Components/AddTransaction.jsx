@@ -75,40 +75,42 @@ class AddTransaction extends Component {
     render() {
 
         return (
-            <div className="AddTransactionPanel">
-                <form >
-                    <h3 className="AddTransactionPanel__h3">Add new transaction</h3>
-                    <div className="AddTransactionPanel__container">
-                        <label className="AddTransactionPanel__label" htmlFor="nameOfTransaction">Name:</label>
-                        <small>(please enter the name of transaction)</small>
-                        <input
-                            onChange={this.handleNameOfTransaction}
-                            id="nameOfTransaction"
-                            type="text"
-                            value={this.state.text}
-                            name="text"
-                            className="AddTransactionPanel__input" />
+            <div className='AddTransactionPanel-box'>
+                <div className="AddTransactionPanel">
+                    <form >
+                        <h3 className="AddTransactionPanel__h3">Add new transaction</h3>
+                        <div className="AddTransactionPanel__container">
+                            <label className="AddTransactionPanel__label" htmlFor="nameOfTransaction">Name:</label>
+                            <small>(please enter the name of transaction)</small>
+                            <input
+                                onChange={this.handleNameOfTransaction}
+                                id="nameOfTransaction"
+                                type="text"
+                                value={this.state.text}
+                                name="text"
+                                className="AddTransactionPanel__input" />
 
-                        {this.state.errors.text && <span className="error">{messages.text_incorect}</span>}
-                    </div>
+                            {this.state.errors.text && <span className="error">{messages.text_incorect}</span>}
+                        </div>
 
-                    <div className="AddTransactionPanel__container">
-                        <label className="AddTransactionPanel__label amount" htmlFor="amount">Amount</label>
-                        <small>(enter the transaction amount, if you add an expense put a minus sign at the beginning of the amount)</small>
-                        <input
-                            onChange={this.handleAmountOfTransaction}
-                            type="number"
-                            id="amount"
-                            name="amount"
-                            value={this.state.amount}
-                            className="AddTransactionPanel__input" />
-                        {this.state.errors.amount && <span className="error">{messages.amount_incorect}</span>}
+                        <div className="AddTransactionPanel__container">
+                            <label className="AddTransactionPanel__label amount" htmlFor="amount">Amount</label>
+                            <small>(enter the transaction amount, if you add an expense put a minus sign at the beginning of the amount)</small>
+                            <input
+                                onChange={this.handleAmountOfTransaction}
+                                type="number"
+                                id="amount"
+                                name="amount"
+                                value={this.state.amount}
+                                className="AddTransactionPanel__input" />
+                            {this.state.errors.amount && <span className="error">{messages.amount_incorect}</span>}
 
-                        <AddTransactionPanelControls handleAddTransaction={this.handleAddTransaction} handleShowHideAddTransaction={this.props.handleShowHideAddTransaction} />
-                    </div>
+                            <AddTransactionPanelControls handleAddTransaction={this.handleAddTransaction} handleShowHideAddTransaction={this.props.handleShowHideAddTransaction} />
+                        </div>
 
-                </form>
+                    </form>
 
+                </div>
             </div>
         );
     }

@@ -5,11 +5,28 @@
     margin: 0 0 0 20px;
     padding: 0 20px 0 20px;
     display: flex;
+    position: relative;
+
+
+
+
+    .manageFinances-overlayer {
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background: white;
+        opacity: 0.9;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        filter: blur(130px);
+    }
+
 
 
 
     .managefinances__topContainer {
-     border: 2px solid $orangeMainColor;
+        border: 2px solid $orangeMainColor;
         border-radius: 50px;
         background-color: rgba(255, 255, 255, 0.2);
         width: 430px;
@@ -53,10 +70,10 @@
             align-items: center;
 
 
-            .controlsTransaction__addDeleteTransaction{
+            .controlsTransaction__addDeleteTransaction {
                 @include fluid-type(20px, 25px);
-                 width: 333px;
-                 margin: 20px 0 10px 0 ;
+                width: 333px;
+                margin: 20px 0 10px 0;
             }
 
 
@@ -79,7 +96,7 @@
 
         .transaction-list__container {
 
-            .transaction-list__container__items{
+            .transaction-list__container__items {
                 height: 300px;
                 overflow-y: scroll;
 
@@ -92,6 +109,11 @@
                     .transaction-list__textAndAmount {
                         @include fluid-type(15px, 23px);
                         padding: 5px 0 5px 0;
+
+                        .transaction-list__amount {
+                            font-weight: 600;
+                            ;
+                        }
                     }
 
                     .transaction-list__control {
@@ -137,49 +159,61 @@
 
     }
 
-    .AddTransactionPanel {
-        position: absolute;
+    .AddTransactionPanel-box {
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #ffffff;
-        display: flex;
-        padding: 0 15px 15px 15px;
 
-        .AddTransactionPanel__h3 {
-            text-align: center;
-            @include fluid-type(23px, 43px);
-            margin: 17px
-        }
+        z-index: 100000000000;
 
-        .AddTransactionPanel__container {
+        .AddTransactionPanel {
+
+
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            z-index: 10000;
+            padding: 0 15px 15px 15px;
 
-            .AddTransactionPanel__label {
-                @include fluid-type(20px, 33px);
-                padding-bottom: 5px;
+            .AddTransactionPanel__h3 {
+                text-align: center;
+                @include fluid-type(23px, 43px);
+                margin: 17px
             }
 
-            small {
-                @include fluid-type(10px, 17px);
-                max-width: 600px;
-                padding-bottom: 3px;
-            }
+            .AddTransactionPanel__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
 
-            .AddTransactionPanel__input {
-                padding: 5px;
-                width: 400px;
-                margin-bottom: 5px;
-            }
+                .AddTransactionPanel__label {
+                    @include fluid-type(20px, 33px);
+                    padding-bottom: 5px;
+                }
 
-            .amount {
-                margin-top: 25px;
+                small {
+                    @include fluid-type(10px, 17px);
+                    max-width: 600px;
+                    padding-bottom: 3px;
+                }
+
+                .AddTransactionPanel__input {
+                    padding: 5px;
+                    width: 400px;
+                    margin-bottom: 5px;
+                }
+
+                .amount {
+                    margin-top: 25px;
+                }
             }
         }
     }
@@ -218,4 +252,3 @@
     background-color: rgba(214, 103, 24, .8);
     border-radius: 3px;
 }
-
