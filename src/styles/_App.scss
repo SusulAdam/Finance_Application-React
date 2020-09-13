@@ -25,7 +25,14 @@ main {
         left: 0;
         right: 0;
         background-color: rgba(0, 0, 0, 0.1);
+    }
 
+    @media(max-width:1000px) {
+        background-position: 45% 60%;
+    }
+
+    @media(max-width:790px) {
+        background-position: 8% 60%;
     }
 
 

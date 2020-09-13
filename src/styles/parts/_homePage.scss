@@ -6,6 +6,19 @@
     .homePage__container {
         width: 1000px;
 
+        @media(max-width:1700px) {
+            width: 800px;
+        }
+
+        @media(max-width:1350px) {
+            width: 650px;
+        }
+
+        @media(max-width:720px) {
+            width: 100vh;
+            padding: 0 20px 0 20px 0;
+        }
+
 
         .homePage__informations {
 
@@ -14,11 +27,13 @@
                 padding: 10px 0 30px 40px;
                 @include fluid-type(20px, 30px);
 
-                 @media(max-width:1700px) {
-               @include fluid-type(20px, 25px);
-            }
+                @media(max-width:1700px) {
+                    @include fluid-type(20px, 25px);
+                }
 
-
+                @media(max-width:1350px) {
+                    @include fluid-type(15px, 21px);
+                }
 
             }
 
@@ -29,23 +44,25 @@
                 @include fluid-type(40px, 90px);
                 font-weight: 900;
 
+                @media(max-width:1700px) {
+                    @include fluid-type(40px, 70px);
+                }
+
+                @media(max-width:1350px) {
+                    padding: 0px 0 30px 40px;
+                    @include fluid-type(40px, 60px);
+                }
 
             }
 
+            .homePage__control {
+                @include fluid-type(20px, 30px);
+            }
 
-
-            .weight{
+            .weight {
                 font-weight: 600
             }
-
-
-
-
-
-
 
         }
     }
 }
-
-
