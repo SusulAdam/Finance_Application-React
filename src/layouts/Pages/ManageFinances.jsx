@@ -8,7 +8,7 @@ class ManageFinances extends React.Component {
         transactions: [
 
         ],
-        activeAddTransaction: true,
+        activeAddTransaction: false,
         allFinances: [0],
     }
     counter = 0
@@ -65,9 +65,7 @@ class ManageFinances extends React.Component {
             <>
 
                 <div className="manageFinances">
-                    <div className="manageFinances-overlayer">
-
-                    </div>
+                    {this.state.activeAddTransaction && <div className="manageFinances-overlayer"></div>}
                     <div className="managefinances__topContainer">
                         <h2 className="manageFinances__allFinances">All finances</h2>
 

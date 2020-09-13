@@ -159,6 +159,21 @@
 
     }
 
+
+    .manageFinances-overlayer {
+        width: 2000px;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background-color: white;
+        opacity: 0.9;
+        filter: blur(13px);
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        height: 2000px
+    }
+
     .AddTransactionPanel-box {
 
 
@@ -176,10 +191,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba($orangeMainColor, 0.9);
+            border-radius: 50px;
             color: #ffffff;
             z-index: 10000;
-            padding: 0 15px 15px 15px;
+            padding: 30px;
 
             .AddTransactionPanel__h3 {
                 text-align: center;
@@ -193,6 +209,11 @@
                 align-items: center;
                 flex-direction: column;
                 text-align: center;
+
+                .manageFinancesControl {
+                    font-size: 1.5rem;
+                    margin: 20px 0 0 0;
+                }
 
                 .AddTransactionPanel__label {
                     @include fluid-type(20px, 33px);
