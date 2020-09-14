@@ -1,12 +1,7 @@
 .manageFinances {
-
-
     padding: 0 45px 55px 45px;
     display: flex;
     position: relative;
-
-
-
 
     @media(max-height: 750px) {
         height: 100%;
@@ -24,15 +19,6 @@
             background-color: rgba(0, 0, 0, 0.089);
         }
     }
-
-
-
-
-
-
-
-
-
 
     .manageFinances-overlayer {
         top: 0;
@@ -62,10 +48,8 @@
         z-index: 5;
 
         @media(max-width:925px) {
-
             width: 330px;
         }
-
 
         @media(max-width: 700px) {
             position: absolute;
@@ -73,12 +57,9 @@
             left: 0;
             height: 250px;
             width: 100%;
-
-
         }
 
         .manageFinances__allFinances {
-
             font-size: 42px;
             padding: 15px 0px 15px 5px;
             text-align: center;
@@ -89,12 +70,8 @@
                 margin: 5px 0 0 0;
                 font-size: 35px;
             }
-
-
-
-
-
         }
+
 
         .manageFinances__sumOfAllFinances {
             font-size: 110px;
@@ -104,11 +81,13 @@
             justify-content: center;
             font-weight: 600;
             margin: 5px;
-            max-width: 400px;
-            overflow-x: scroll;
+            width: 410px;
+            overflow-x: hidden;
+
 
             @media(max-width:925px) {
-                font-size: 90px;
+                font-size: 85px;
+                max-width: 330px;
             }
 
             @media(max-width: 700px) {
@@ -116,15 +95,12 @@
                 padding: 5px 10px;
                 max-width: 100%;
                 font-size: 70px;
-                overflow: hidden;
-
             }
-
         }
+
 
         .controlsTransaction {
             display: flex;
-
             flex-direction: column;
             margin: 100px 0 0 0;
             justify-content: center;
@@ -157,17 +133,13 @@
     }
 
     .transaction-list {
-
         padding: 5px 0 15px 0;
         position: relative;
         height: 800px;
 
-
         @media(max-width: 700px) {
             width: 100%;
         }
-
-
 
         .transaction-list__h3 {
             @include fluid-type(25px, 40px);
@@ -177,22 +149,19 @@
         }
 
         .transaction-list__container {
+            z-index: 10;
 
             @media(max-width: 700px) {
                 width: 300px;
-
                 display: flex;
                 flex-direction: column;
-
                 justify-content: center;
-
             }
-
-
 
             .transaction-list__container__items {
                 height: 300px;
                 overflow-y: scroll;
+                overflow-x: scroll;
 
                 @media(max-width: 700px) {
                     height: 140px;
@@ -211,7 +180,6 @@
 
                         .transaction-list__amount {
                             font-weight: 600;
-
                         }
                     }
 
@@ -256,11 +224,7 @@
 
             @media(max-width: 415px) {
                 width: 333px;
-
             }
-
-
-
         }
 
         .expenses {
@@ -293,16 +257,8 @@
                 width: 333px;
 
             }
-
-
-
-
-
-
         }
-
     }
-
 
     .manageFinances-overlayer {
         width: 100%;
@@ -319,7 +275,6 @@
         @media(max-width: 800px) {
             top: 30%;
         }
-
     }
 
 
@@ -338,14 +293,13 @@
             background-color: rgba($orangeMainColor, 0.9);
             border-radius: 50px;
             color: #ffffff;
-            z-index: 10000;
+            z-index: 10000000000;
             padding: 30px;
 
 
             @media(max-width: 800px) {
                 top: 30%;
             }
-
 
             .AddTransactionPanel__h3 {
                 text-align: center;
@@ -354,10 +308,7 @@
 
                 @media(max-width: 1100px) {
                     @include fluid-type(23px, 39px);
-
                 }
-
-
             }
 
             .AddTransactionPanel__container {

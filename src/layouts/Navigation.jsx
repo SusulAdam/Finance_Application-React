@@ -15,22 +15,16 @@ const Navigation = () => {
 
 
     menuHamburger = links.map(link => (
-
-
         <li className="hamburger__li" key={link.name}>
             <NavLink to={link.path} onClick={() => setShowMenu(!showMenu)} exact={link.exact ? link.exact : false}> {link.name}</NavLink>
         </li>
 
     ))
 
-
-
     const menu = links.map(link => (
-
         <li className="navigation__li" key={link.name}>
             <NavLink to={link.path} exact={link.exact ? link.exact : false} > {link.name}</NavLink>
         </li>
-
     ))
 
     return (
