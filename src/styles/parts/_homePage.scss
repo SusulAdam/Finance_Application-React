@@ -1,11 +1,14 @@
 .homePage {
     display: flex;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
+
+
 
 
     .homePage__container {
         width: 1000px;
+
 
         @media(max-width:1700px) {
             width: 800px;

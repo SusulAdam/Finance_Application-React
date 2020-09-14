@@ -16,6 +16,11 @@ main {
     background: url('image/Pig.jpg') center center;
 
 
+    @media(min-height: 800px) {
+        overflow: hidden;
+
+    }
+
     &:before {
         content: "";
         position: absolute;
@@ -28,7 +33,7 @@ main {
     }
 
     @media(max-width:1000px) {
-        background-position: 45% 60%;
+        background-position: 45% 50%;
     }
 
     @media(max-width:790px) {
