@@ -8,6 +8,7 @@
         background: url('../image/Pig.jpg') center center;
         background-position: 11% 85%;
 
+
         &:before {
             content: "";
             position: absolute;
@@ -54,9 +55,19 @@
         @media(max-width: 700px) {
             position: absolute;
             top: 0;
-            left: 0;
+            left: 50%;
             height: 250px;
-            width: 100%;
+            width: 500px;
+            transform: translateX(-50%);
+        }
+
+        @media(max-width: 550px) {
+            width: 420px;
+
+        }
+
+        @media(max-width: 415px) {
+            width: 350px;
         }
 
         .manageFinances__allFinances {
@@ -81,13 +92,16 @@
             justify-content: center;
             font-weight: 600;
             margin: 5px;
-            width: 410px;
-            overflow-x: hidden;
+
+            overflow-y: auto;
+            height: 300px;
+            word-break: break-all;
 
 
             @media(max-width:925px) {
                 font-size: 85px;
                 max-width: 330px;
+                height: 150px;
             }
 
             @media(max-width: 700px) {
@@ -95,6 +109,7 @@
                 padding: 5px 10px;
                 max-width: 100%;
                 font-size: 70px;
+                height: 100px;
             }
         }
 
@@ -126,6 +141,11 @@
                     font-size: 15px;
                     padding: 5px 10px;
                     width: auto;
+                }
+
+                @media(max-width: 415px) {
+                    font-size: 13px;
+
                 }
 
             }
@@ -160,8 +180,8 @@
 
             .transaction-list__container__items {
                 height: 300px;
-                overflow-y: scroll;
-                overflow-x: scroll;
+                overflow-y: auto;
+                overflow-x: auto;
 
                 @media(max-width: 700px) {
                     height: 140px;
@@ -218,12 +238,18 @@
                 transform: translate(-50%, -50%);
                 margin: 0 30px 0 0;
                 padding: 0 15px 0 0;
-                width: 400px;
+                width: 500px;
                 height: 250px;
             }
 
+            @media(max-width: 550px) {
+                width: 420px;
+                padding: 0;
+                margin: 0;
+            }
+
             @media(max-width: 415px) {
-                width: 333px;
+                width: 350px;
             }
         }
 
@@ -249,13 +275,18 @@
                 transform: translate(-50%, -50%);
                 margin: 0 30px 0 0;
                 padding: 0 15px 0 0;
-                width: 400px;
+                width: 500px;
                 height: 250px;
             }
 
-            @media(max-width: 415px) {
-                width: 333px;
+            @media(max-width: 550px) {
+                width: 420px;
+                padding: 0;
+                margin: 0;
+            }
 
+            @media(max-width: 415px) {
+                width: 350px;
             }
         }
     }
@@ -330,6 +361,8 @@
                         font-size: 1em;
 
                     }
+
+
                 }
 
                 .AddTransactionPanel__label {

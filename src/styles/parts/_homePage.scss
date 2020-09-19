@@ -54,6 +54,11 @@
                     @include fluid-type(40px, 60px);
                 }
 
+                @media(max-width:800px) {
+                    margin: 70px 0 0 0;
+                    @include fluid-type(40px, 60px);
+                }
+
             }
 
             .homePage__control {

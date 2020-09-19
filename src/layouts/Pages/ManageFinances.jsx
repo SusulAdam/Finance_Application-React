@@ -59,7 +59,10 @@ class ManageFinances extends React.Component {
 
     render() {
         let sumOfAllFinances = this.state.allFinances.reduce((a, b) => a + b)
+
+
         return (
+
             <>
 
                 <div className="manageFinances">
